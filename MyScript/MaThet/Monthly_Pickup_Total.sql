@@ -1,11 +1,11 @@
 WITH CTE_DELI AS (
-	SELECT * FROM [Aug_Data].[dbo].[OB_REG]
+	SELECT * FROM [Aug_Data_25].[dbo].[OB_REG]
 	UNION ALL
-	SELECT * FROM [Aug_Data].[dbo].[OB_MDY]
+	SELECT * FROM [Aug_Data_25].[dbo].[OB_MDY]
 	UNION ALL
-	SELECT * FROM [Aug_Data].[dbo].[OB_NPW]
+	SELECT * FROM [Aug_Data_25].[dbo].[OB_NPW]
 	UNION ALL
-	SELECT * FROM [Aug_Data].[dbo].[OB_YGN]
+	SELECT * FROM [Aug_Data_25].[dbo].[OB_YGN]
 	)
 	
 select 

@@ -1,5 +1,6 @@
 select [Date]
 	,[Waybill No]
+	--,[Sender/Internal Reference]
     ,[From City]
     ,[Branch]
     ,[To City]
@@ -7,7 +8,7 @@ select [Date]
     ,[Service Type]
     ,[Status]
 from 
-	[Oct 25].[dbo].[10 Oct OB]
+	[Oct 25].[dbo].[27 Oct OB]
 where
 	[From City]
 	in (

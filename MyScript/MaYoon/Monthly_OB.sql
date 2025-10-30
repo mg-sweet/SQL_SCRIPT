@@ -1,14 +1,17 @@
 with cte_OB as (
-select * from [Aug_Data].[dbo].[OB_MDY]
+select * from [Sep_Data].[dbo].[OB_MDY]
 union
-select * from [Aug_Data].[dbo].[OB_NPW]
+select * from [Sep_Data].[dbo].[OB_NPW]
 union 
-select * from [Aug_Data].[dbo].[OB_REG]
+select * from [Sep_Data].[dbo].[OB_REG]
 union 
-select * from [Aug_Data].[dbo].[OB_YGN]
+select * from [Sep_Data].[dbo].[OB_YGN]
 )
-select MONTH([Date]) AS Month, [From City], COUNT(*) as Total 
+--select MONTH([Date]) AS Month, [From City], COUNT(*) as Total
+select 'Sep' as Month, [From City], COUNT(*) as Total 
 from
 cte_OB
-Group by MONTH([Date]), [From City] 
+Group by [From City] 
 Order by [From City] asc
+
+select top(10000)* from [Sep_Data].[dbo].[OB_YGN]

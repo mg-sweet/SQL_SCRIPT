@@ -1,23 +1,14 @@
 WITH CTE_Combine as (
---select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[IB_MDY]
---union all
---select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[IB_NPW]
---union all
---select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[IB_REG]
---union all
---select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[IB_YGN]
---union all
-select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[OB_MDY]
+select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [July_Data_25].[dbo].[OB_MDY]
 union all
-select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[OB_NPW]
+select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [July_Data_25].[dbo].[OB_NPW]
 union all
-select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[OB_YGN]
+select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [July_Data_25].[dbo].[OB_YGN]
 union all
-select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [Aug_Data].[dbo].[OB_REG]
-
+select [Date],[Waybill No#],[Customer Reference No#],[Customer],[Pickupman],[Origin Branch] from [July_Data_25].[dbo].[OB_REG]
 )
 
-SELECT top(1000)
+SELECT
 	[Date]
 	--,[Waybill No#]
 	,[Customer Reference No#]
@@ -37,6 +28,8 @@ SELECT top(1000)
 	FROM
 	CTE_Combine
 	where Pickupman <> 'null'
+	AND
+	[Origin Branch] NOT LIKE 'YGN-%'
 	--and
 	--[Customer Reference No#] = 'E2371651'
 	--AND

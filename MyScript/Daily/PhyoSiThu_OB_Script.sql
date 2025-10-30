@@ -1,12 +1,14 @@
-SELECT  [Date]
-      ,[Waybill No]
-      ,[From City]
-      ,[Branch]
-      ,[To City]
-      ,[To City/Short Code]
-      ,[Service Type]
-      ,[Status]
-  FROM [Sep 25].[dbo].[28 Sep OB]
+SELECT  
+	TRY_CAST([Date] as Date) AS Date
+	,[Waybill No]
+	--,[Sender/Internal Reference]
+    ,[From City]
+    ,[Branch]
+    ,[To City]
+    ,[To City/Short Code]
+    ,[Service Type]
+    ,[Status]
+  FROM [Oct 25].[dbo].[27 Oct OB]
   where 
   --[From City] = 'Mandalay'
   --OR
@@ -15,8 +17,9 @@ SELECT  [Date]
   --[From City] = 'Amarapura'
   --OR
   --[From City] = 'Patheingyi'
-  Branch LIKE 'MDY-%' 
-  OR
+  Branch LIKE 'MDY-%'
+  
+   OR
   [From City] IN (
   -- MGY Region
 	'Magway','Pakokku','Taungtwingyi','Yesagyo','Aunglan','Pwintbyu','Minbu',

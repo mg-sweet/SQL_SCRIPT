@@ -1,11 +1,11 @@
 	with CTE_IB as(
-	SELECT * FROM [Aug_Data].[dbo].[IB_MDY]
+	SELECT * FROM [Sep_Data].[dbo].[IB_MDY]
     UNION all
-    SELECT * FROM [Aug_Data].[dbo].[IB_NPW]
+    SELECT * FROM [Sep_Data].[dbo].[IB_NPW]
 	UNION all
-    SELECT * FROM [Aug_Data].[dbo].[IB_YGN]
+    SELECT * FROM [Sep_Data].[dbo].[IB_YGN]
     UNION all
-    SELECT * FROM [Aug_Data].[dbo].[IB_REG])
+    SELECT * FROM [Sep_Data].[dbo].[IB_REG])
 select Month([Date]) as Month,[To City],
 case 
 when SUBSTRING([Customer Reference No#],1,1)='I' then 'I'
